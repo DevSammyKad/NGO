@@ -1,4 +1,5 @@
 // Get the close button (i element) with the specified class
+
 const closeIcon = document.querySelector(
   '.ri-close-line.appointment-close-btn'
 );
@@ -77,7 +78,6 @@ form.addEventListener('submit', (e) => {
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then((response) => {
       form.reset();
-
       alert('Your Appointment Successfully Booked.');
     })
     .catch((error) => console.error('Error!', error.message));
