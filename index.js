@@ -1,4 +1,11 @@
-// require('dotenv').config();
+const express = require('express');
+const app = express();
+const cors = require('cors');
+const dotenv = require('dotenv');
+dotenv.config({ path: 'config.env' });
+app.use(cors());
+app.use(express.json());
+const PORT = 5000;
 
 // const accountSid = process.env.TWILIO_ACCOUNT_SID;
 // const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -20,6 +27,7 @@
 
 // const { response } = require('express');
 // const { response } = require('express');
+
 const fast2sms = require('fast-two-sms');
 // const express = require('express');
 
@@ -43,3 +51,9 @@ if (fast2sms && fast2sms.sendMessage) {
 } else {
   console.error('fast2sms or sendMessage is not defined');
 }
+
+// Add PhonePay Payment Gateway
+
+app.listen(PORT, () =>
+  console.log(`Server started in development mode on port ${PORT}`)
+);

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Donate to Palavi Sanstha" />
     <title>Donate To Palavi</title>
     <!-- favicon -->
     <link
@@ -117,14 +118,19 @@
         </div>
         <hr class="line-hr" />
         <img src="img/old-age-home/Mann-ka-Tilak-9.webp" />
-        <form action="" method="POST">
+        <form
+          action=""
+          method="POST"
+          id="donation-form"
+          enctype="multipart/form-data"
+        >
           <div class="formbold-input-wrapp formbold-mb-3">
             <label for="firstname" class="formbold-form-label"> Name </label>
 
             <div class="name-custom">
               <input
                 type="text"
-                name="firstname"
+                name="firstName"
                 id="firstname"
                 placeholder="First name"
                 class="formbold-form-input"
@@ -132,7 +138,7 @@
 
               <input
                 type="text"
-                name="lastname"
+                name="lastName"
                 id="lastname"
                 placeholder="Last name"
                 class="formbold-form-input"
@@ -201,13 +207,13 @@
           <hr class="line-hr" />
           <div class="formbold-input-flex">
             <div>
-              <label for="pan" class="formbold-form-label">
+              <label for="donationAmount" class="formbold-form-label">
                 Donation amount
               </label>
               <input
                 type="number"
-                name="pan"
-                id="pan"
+                name="donationAmount"
+                id="donationAmount"
                 placeholder="3000 Rs"
                 class="formbold-form-input"
               />
@@ -217,13 +223,9 @@
           <div class="formbold-mb-3">
             <label class="formbold-form-label">Purpose</label>
 
-            <select
-              class="formbold-form-input"
-              name="occupation"
-              id="occupation"
-            >
-              <option value="male">Old Age Home</option>
-              <option value="female">Women Empowerment</option>
+            <select class="formbold-form-input" name="purpose" id="purpose">
+              <option value="old-age-home">Old Age Home</option>
+              <option value="women-empowerment">Women Empowerment</option>
               <option value="others">Others</option>
             </select>
           </div>
@@ -235,18 +237,22 @@
               type="file"
               name="upload"
               id="upload"
+              accept=".pdf,.jpg,.jpeg,.png"
               class="formbold-form-input formbold-form-file"
             />
           </div>
 
           <div class="formbold-checkbox-wrapper">
-            <label for="supportCheckbox" class="formbold-checkbox-label">
+            <label for="termsAccepted" class="formbold-checkbox-label">
               <div class="formbold-relative">
                 <input
                   type="checkbox"
-                  id="supportCheckbox"
+                  name="termsAccepted"
+                  value="true"
+                  required
                   class="formbold-input-checkbox"
                 />
+
                 <div class="formbold-checkbox-inner">
                   <span class="formbold-opacity-0">
                     <svg
@@ -272,7 +278,9 @@
             </label>
           </div>
 
-          <button class="formbold-btn" id="donate-btn">Donate</button>
+          <button type="submit" class="formbold-btn" id="donate-btn">
+            Donate
+          </button>
           <div>
             <p class="small-p">
               * Registered under Section 8 of the Indian Companies Act, 2013 and
@@ -325,5 +333,61 @@
         column-gap: 20px;
       }
     </style>
+
+    <script>
+      document
+        .getElementById('donation-form')
+        .addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+          const formData = new FormData(form);
+
+          // Log form data for debugging (Note: Files cannot be directly logged)
+          for (let [key, value] of formData.entries()) {
+            if (key === 'upload') {
+              console.log(`${key}: ${value.name}`); // Log file name
+            } else {
+              console.log(`${key}: ${value}`);
+            }
+          }
+
+          const termsAccepted = formData.get('termsAccepted');
+          if (!termsAccepted) {
+            alert('Please accept the terms and conditions.');
+            return;
+          }
+
+          // Send the form data to the server (Replace with your endpoint)
+
+          try {
+            const response = await fetch(
+              'http://localhost:3000/api/donations',
+              {
+                method: 'POST',
+                body: formData,
+              }
+            );
+
+            if (response.ok) {
+              const data = await response.json();
+
+              if (data.success && data.redirectUrl) {
+                // 🔁 Redirect to PhonePe simulator or actual payment page
+                window.location.href = data.redirectUrl;
+              } else {
+                alert('Unexpected response from server.');
+              }
+            } else {
+              alert('Something went wrong. Please try again later.');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert(
+              'Submission failed. Please check your connection and try again.'
+            );
+          }
+        });
+    </script>
   </body>
 </html>
