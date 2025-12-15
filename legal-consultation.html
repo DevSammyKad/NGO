@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book a free legal consultation with Palavi Samajik Sanstha. Compassionate legal guidance backed by counselling in Pune. Confidential, ethical legal support.">
+    <meta name="keywords" content="legal consultation, free legal advice, legal support Pune, advocate services, family counselling, legal guidance">
+    <meta name="author" content="Palavi Samajik Sanstha">
+    <meta property="og:title" content="Free Legal Consultation - Palavi Samajik Sanstha">
+    <meta property="og:description" content="Compassionate legal guidance backed by counselling. Book your free consultation today.">
+    <meta property="og:type" content="website">
+    <title>Free Legal Consultation - Palavi Samajik Sanstha</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #171717;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Added header with prominent call button */
+        .top-header {
+            background: #000000;
+            color: #ffffff;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            font-size: 24px;
+        }
+
+        .brand-text h2 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #a3a3a3;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .call-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #16a34a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .call-btn:hover {
+            background: #15803d;
+            transform: translateY(-1px);
+        }
+
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #d4d4d4;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid #404040;
+            transition: all 0.2s;
+        }
+
+        .email-btn:hover {
+            color: #ffffff;
+            border-color: #525252;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Added hero section */
+        .hero {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #525252;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #000000;
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .hero-cta:hover {
+            background: #171717;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Added two-column layout for reviews and form */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Added testimonials section */
+        .testimonials {
+            position: sticky;
+            top: 100px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .testimonial-card {
+            background: #fafafa;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #262626;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #16a34a, #15803d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .author-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #171717;
+        }
+
+        .author-info p {
+            font-size: 13px;
+            color: #737373;
+        }
+
+        /* Redesigned form section */
+        .form-section {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+        }
+
+        .form-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .form-header p {
+            font-size: 15px;
+            color: #737373;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 8px;
+        }
+        
+        .required {
+            color: #dc2626;
+        }
+        
+        .optional {
+            color: #a3a3a3;
+            font-weight: 400;
+            font-size: 13px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 15px;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            background: #ffffff;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #171717;
+            box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.05);
+        }
+        
+        input::placeholder, textarea::placeholder {
+            color: #a3a3a3;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: #000000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 8px;
+        }
+        
+        .submit-btn:hover {
+            background: #171717;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Updated features grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text {
+            font-size: 13px;
+            color: #525252;
+            font-weight: 500;
+        }
+        
+        .success-message {
+            display: none;
+            background: #16a34a;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Added footer */
+        footer {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 40px 24px;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .footer-item {
+            font-size: 14px;
+            color: #525252;
+        }
+
+        .footer-item a {
+            color: #171717;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-item a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 13px;
+            color: #737373;
+            margin-top: 16px;
+        }
+        
+        /* Added responsive design for mobile */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .call-btn, .email-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .testimonials {
+                position: static;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .form-section {
+                padding: 28px 20px;
+            }
+
+            .form-header h2 {
+                font-size: 22px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-info {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Added sticky header with call button -->
+    <header class="top-header">
+        <div class="header-content">
+            <div class="brand">
+                <div class="brand-icon">⚖️</div>
+                <div class="brand-text">
+                    <h2>Palavi Samajik Sanstha</h2>
+                    <p>Legal Support & Counselling</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="tel:+917773959060" class="call-btn">
+                    <span>📞</span>
+                    <span>Call Now: 7773959060</span>
+                </a>
+                <a href="mailto:paalvisansth13@rediffmail.com" class="email-btn">
+                    <span>✉️</span>
+                    <span>Email</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Added hero section -->
+        <section class="hero">
+            <h1>Compassionate Legal Guidance, Backed by Counselling</h1>
+            <p>We provide ethical and confidential legal support integrated with emotional and family counselling. Protect your rights while making calm, informed decisions.</p>
+            <a href="#book-consultation" class="hero-cta">
+                <span>📅</span>
+                <span>Book Free Consultation</span>
+            </a>
+        </section>
+
+        <!-- Added two-column layout with testimonials and form -->
+        <div class="main-content">
+            <!-- Added testimonials section -->
+            <section class="testimonials">
+                <h2 class="section-title">What Our Clients Say</h2>
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The team helped me through a difficult family matter with patience and care. Their counselling support made all the difference during a stressful time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya M.</h4>
+                            <p>Family Law Case</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Professional, ethical, and truly compassionate. They explained everything clearly and helped me understand my rights. Highly recommend their services."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rajesh K.</h4>
+                            <p>Legal Consultation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The integrated approach of legal support with counselling is unique. They not only helped with my legal issues but also supported my emotional well-being."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sunita D.</h4>
+                            <p>Counselling & Legal Aid</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Updated form section -->
+            <section class="form-section" id="book-consultation">
+                <div class="form-header">
+                    <h2>Book Your Free Consultation</h2>
+                    <p>Fill in your details and we'll get back to you within 24 hours</p>
+                </div>
+
+                <div id="successMessage" class="success-message">
+                    ✓ Thank you! Your consultation request has been received. We'll contact you soon.
+                </div>
+                
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            required 
+                            placeholder="+91 XXXXX XXXXX"
+                            pattern="[0-9+\s\-()]+"
+                            autocomplete="tel"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="optional">(Optional)</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="your.email@example.com"
+                            autocomplete="email"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Brief Description <span class="optional">(Optional)</span></label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Tell us briefly about your legal concern"
+                        ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Book Free Consultation</button>
+
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">🔒</div>
+                            <div class="feature-text">100% Confidential</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⚖️</div>
+                            <div class="feature-text">Ethical Support</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">❤️</div>
+                            <div class="feature-text">Compassionate Care</div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Added footer section -->
+    <footer>
+        <div class="footer-info">
+            <div class="footer-item">
+                📍 <strong>Location:</strong> Khed (Rajgurunagar), Pune
+            </div>
+            <div class="footer-item">
+                📞 <strong>Call:</strong> <a href="tel:+917773959060">7773959060</a>
+            </div>
+            <div class="footer-item">
+                ✉️ <strong>Email:</strong> <a href="mailto:paalvisansth13@rediffmail.com">paalvisansth13@rediffmail.com</a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 Palavi Samajik Sanstha. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            console.log('Form submitted:', formData);
+            
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            
+            this.reset();
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+
+        document.querySelector('.hero-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#book-consultation').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
